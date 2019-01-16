@@ -10,6 +10,11 @@ import javax.swing.JPanel;
 import javax.swing.UIManager;
 
 public class U3L018BallGame extends JFrame {
+	//computer's color- randomly generated 
+	private int compRed = 0;
+	private int compGreen = 0; 
+	private int compBlue = 0; 
+	private Color compColor = new Color (compRed, compGreen, compBlue); 
 	public U3L018BallGame() {
 		initGUI();
 		
