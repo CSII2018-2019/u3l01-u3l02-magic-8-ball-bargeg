@@ -17,6 +17,7 @@ public class U3L018BallGame extends JFrame {
 	private int compGreen = 0; 
 	private int compBlue = 0; 
 	private Color compColor = new Color (compRed, compGreen, compBlue); 
+	JLabel phrase = new JLabel(); 
 	public U3L018BallGame() {
 		initGUI();
 		
@@ -52,7 +53,7 @@ public class U3L018BallGame extends JFrame {
 		shakeButton.setForeground(Color.BLACK);
 		Font ballFont = new Font ("Times new Roman" , Font.BOLD + Font.ITALIC,  32);
 		shakeButton.setFont(ballFont);
-		downButtonPanel.addActionListener(new ActionListener() {
+		shakeButton.addActionListener(new ActionListener() {
 			public void actionPerformed (ActionEvent e) {
 				randomShake(); 
 			}
@@ -63,7 +64,7 @@ public class U3L018BallGame extends JFrame {
 	private void generateRandomPhrase() {
 		int whichPhrase = (int)(Math.random() * 6 +1);
 		if (whichPhrase == 1) {
-			JLabel phrase = new JLabel("Yes, you shall");
+			phrase.setText("Yes, you shall");
 			add(phrase, BorderLayout.CENTER);
 			phrase.setHorizontalAlignment(JLabel.CENTER); //left or right
 			//customize label
@@ -73,7 +74,7 @@ public class U3L018BallGame extends JFrame {
 			
 		}
 		else if (whichPhrase == 2) {
-			JLabel phrase = new JLabel("My signs point to never");
+			phrase.setText("My signs point to never");
 			add(phrase, BorderLayout.CENTER);
 			phrase.setHorizontalAlignment(JLabel.CENTER); //left or right
 			//customize label
@@ -82,7 +83,7 @@ public class U3L018BallGame extends JFrame {
 			phrase.setForeground(Color.BLACK); 
 		} 
 		else if (whichPhrase == 3) {
-			JLabel phrase = new JLabel("What're you thinking?!? NO!!");
+			phrase.setText("What're you thinking?!? NO!!");
 			add(phrase, BorderLayout.CENTER);
 			phrase.setHorizontalAlignment(JLabel.CENTER); //left or right
 			//customize label
@@ -91,7 +92,7 @@ public class U3L018BallGame extends JFrame {
 			phrase.setForeground(Color.BLACK); 
 		} 
 		else if (whichPhrase == 4) {
-			JLabel phrase = new JLabel("Of course, yes!");
+			phrase.setText("Of course, yes!");
 			add(phrase, BorderLayout.CENTER);
 			phrase.setHorizontalAlignment(JLabel.CENTER); //left or right
 			//customize label
@@ -100,7 +101,7 @@ public class U3L018BallGame extends JFrame {
 			phrase.setForeground(Color.BLACK); 
 		} 
 		else if (whichPhrase == 5) {
-			JLabel phrase = new JLabel("Maybe.. time will tell");
+			phrase.setText("Maybe.. time will tell");
 			add(phrase, BorderLayout.CENTER);
 			phrase.setHorizontalAlignment(JLabel.CENTER); //left or right
 			//customize label
@@ -109,7 +110,7 @@ public class U3L018BallGame extends JFrame {
 			phrase.setForeground(Color.BLACK); 
 		} 
 		else if (whichPhrase == 6) {
-			JLabel phrase = new JLabel("Why haven't you done it yet?!");
+			phrase.setText("Why haven't you done it yet?!");
 			add(phrase, BorderLayout.CENTER);
 			phrase.setHorizontalAlignment(JLabel.CENTER); //left or right
 			//customize label
@@ -125,7 +126,8 @@ public class U3L018BallGame extends JFrame {
 	private void updatePhrase(int w) {
 		int whichPhrase = w; 
 		if (whichPhrase == 1) {
-			JLabel phrase = new JLabel("Yes, you shall");
+			phrase.setText("Yes, you shall");
+			phrase.setBackground(Color.WHITE);
 			add(phrase, BorderLayout.CENTER);
 			phrase.setHorizontalAlignment(JLabel.CENTER); //left or right
 			//customize label
@@ -135,7 +137,8 @@ public class U3L018BallGame extends JFrame {
 			
 		}
 		else if (whichPhrase == 2) {
-			JLabel phrase = new JLabel("My signs point to never");
+			phrase.setText("My signs point to never");
+			phrase.setBackground(Color.WHITE);
 			add(phrase, BorderLayout.CENTER);
 			phrase.setHorizontalAlignment(JLabel.CENTER); //left or right
 			//customize label
@@ -144,7 +147,8 @@ public class U3L018BallGame extends JFrame {
 			phrase.setForeground(Color.BLACK); 
 		} 
 		else if (whichPhrase == 3) {
-			JLabel phrase = new JLabel("What're you thinking?!? NO!!");
+			phrase.setText("What're you thinking?!? NO!!");
+			phrase.setBackground(Color.WHITE);
 			add(phrase, BorderLayout.CENTER);
 			phrase.setHorizontalAlignment(JLabel.CENTER); //left or right
 			//customize label
@@ -153,7 +157,8 @@ public class U3L018BallGame extends JFrame {
 			phrase.setForeground(Color.BLACK); 
 		} 
 		else if (whichPhrase == 4) {
-			JLabel phrase = new JLabel("Of course, yes!");
+			phrase.setText("Of course, yes!");
+			phrase.setBackground(Color.WHITE);
 			add(phrase, BorderLayout.CENTER);
 			phrase.setHorizontalAlignment(JLabel.CENTER); //left or right
 			//customize label
@@ -162,7 +167,8 @@ public class U3L018BallGame extends JFrame {
 			phrase.setForeground(Color.BLACK); 
 		} 
 		else if (whichPhrase == 5) {
-			JLabel phrase = new JLabel("Maybe.. time will tell");
+			phrase.setText("Maybe.. time will tell");
+			phrase.setBackground(Color.WHITE);
 			add(phrase, BorderLayout.CENTER);
 			phrase.setHorizontalAlignment(JLabel.CENTER); //left or right
 			//customize label
@@ -171,7 +177,8 @@ public class U3L018BallGame extends JFrame {
 			phrase.setForeground(Color.BLACK); 
 		} 
 		else if (whichPhrase == 6) {
-			JLabel phrase = new JLabel("Why haven't you done it yet?!");
+			phrase.setText("Why haven't you done it yet?!");
+			phrase.setBackground(Color.WHITE);
 			add(phrase, BorderLayout.CENTER);
 			phrase.setHorizontalAlignment(JLabel.CENTER); //left or right
 			//customize label
