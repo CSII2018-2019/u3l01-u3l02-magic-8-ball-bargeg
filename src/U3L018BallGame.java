@@ -2,6 +2,8 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -34,10 +36,32 @@ public class U3L018BallGame extends JFrame {
 		Font wordFont = new Font ("Arial" , Font.BOLD + Font.ITALIC,  40);
 		introWords.setFont(wordFont);
 		introWords.setForeground(Color.BLACK);
+		generateRandomPhrase(); 
 		//titleLabel.setHorizontalAlignment(JLabel.CENTER);
 		
 		//PLACE FOR THE PHRASE
-		int whichPhrase = (int) (Math.random() * 6 +1);
+		//create if statements for the responses you can get
+		//maybe math random and then if # then.. 
+		
+		//shake button
+		JPanel downButtonPanel = new JPanel();
+		downButtonPanel.setBackground(Color.LIGHT_GRAY);
+		add(downButtonPanel, BorderLayout.PAGE_END);
+		JButton shakeButton = new JButton ("SHAKE");
+		shakeButton.setBackground(Color.DARK_GRAY);
+		shakeButton.setForeground(Color.BLACK);
+		Font ballFont = new Font ("Times new Roman" , Font.BOLD + Font.ITALIC,  32);
+		shakeButton.setFont(ballFont);
+		downButtonPanel.addActionListener(new ActionListener() {
+			public void actionPerformed (ActionEvent e) {
+				randomShake(); 
+			}
+		}); 
+
+		downButtonPanel.add(shakeButton);
+	}
+	private void generateRandomPhrase() {
+		int whichPhrase = (int)(Math.random() * 6 +1);
 		if (whichPhrase == 1) {
 			JLabel phrase = new JLabel("Yes, you shall");
 			add(phrase, BorderLayout.CENTER);
@@ -93,20 +117,69 @@ public class U3L018BallGame extends JFrame {
 			phrase.setFont(titleFont);
 			phrase.setForeground(Color.BLACK); 
 		} 
-		
-		//create if statements for the responses you can get
-		//maybe math random and then if # then.. 
-		
-		//shake button
-		JPanel downButtonPanel = new JPanel();
-		downButtonPanel.setBackground(Color.LIGHT_GRAY);
-		add(downButtonPanel, BorderLayout.PAGE_END);
-		JButton shakeButton = new JButton ("SHAKE");
-		shakeButton.setBackground(Color.DARK_GRAY);
-		shakeButton.setForeground(Color.BLACK);
-		Font ballFont = new Font ("Times new Roman" , Font.BOLD + Font.ITALIC,  32);
-		shakeButton.setFont(ballFont);
-		downButtonPanel.add(shakeButton);
+	}
+	private void randomShake() {
+		int whichPhrase = (int) (Math.random() * 6 +1);
+	updatePhrase(whichPhrase); 
+	} 
+	private void updatePhrase(int w) {
+		int whichPhrase = w; 
+		if (whichPhrase == 1) {
+			JLabel phrase = new JLabel("Yes, you shall");
+			add(phrase, BorderLayout.CENTER);
+			phrase.setHorizontalAlignment(JLabel.CENTER); //left or right
+			//customize label
+			Font titleFont = new Font ("Times new Roman" , Font.BOLD + Font.ITALIC,  32);
+			phrase.setFont(titleFont);
+			phrase.setForeground(Color.BLACK);
+			
+		}
+		else if (whichPhrase == 2) {
+			JLabel phrase = new JLabel("My signs point to never");
+			add(phrase, BorderLayout.CENTER);
+			phrase.setHorizontalAlignment(JLabel.CENTER); //left or right
+			//customize label
+			Font titleFont = new Font ("Times new Roman" , Font.BOLD + Font.ITALIC,  32);
+			phrase.setFont(titleFont);
+			phrase.setForeground(Color.BLACK); 
+		} 
+		else if (whichPhrase == 3) {
+			JLabel phrase = new JLabel("What're you thinking?!? NO!!");
+			add(phrase, BorderLayout.CENTER);
+			phrase.setHorizontalAlignment(JLabel.CENTER); //left or right
+			//customize label
+			Font titleFont = new Font ("Times new Roman" , Font.BOLD + Font.ITALIC,  32);
+			phrase.setFont(titleFont);
+			phrase.setForeground(Color.BLACK); 
+		} 
+		else if (whichPhrase == 4) {
+			JLabel phrase = new JLabel("Of course, yes!");
+			add(phrase, BorderLayout.CENTER);
+			phrase.setHorizontalAlignment(JLabel.CENTER); //left or right
+			//customize label
+			Font titleFont = new Font ("Times new Roman" , Font.BOLD + Font.ITALIC,  32);
+			phrase.setFont(titleFont);
+			phrase.setForeground(Color.BLACK); 
+		} 
+		else if (whichPhrase == 5) {
+			JLabel phrase = new JLabel("Maybe.. time will tell");
+			add(phrase, BorderLayout.CENTER);
+			phrase.setHorizontalAlignment(JLabel.CENTER); //left or right
+			//customize label
+			Font titleFont = new Font ("Times new Roman" , Font.BOLD + Font.ITALIC,  32);
+			phrase.setFont(titleFont);
+			phrase.setForeground(Color.BLACK); 
+		} 
+		else if (whichPhrase == 6) {
+			JLabel phrase = new JLabel("Why haven't you done it yet?!");
+			add(phrase, BorderLayout.CENTER);
+			phrase.setHorizontalAlignment(JLabel.CENTER); //left or right
+			//customize label
+			Font titleFont = new Font ("Times new Roman" , Font.BOLD + Font.ITALIC,  32);
+			phrase.setFont(titleFont);
+			phrase.setForeground(Color.BLACK); 
+		} 
+	
 	}
 	
 	public static void main(String[] args) {
